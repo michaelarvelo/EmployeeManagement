@@ -1,0 +1,53 @@
+﻿@model BenefitPolicyViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>BenefitPolicy</h4>
+<hr />
+<div class="row">
+    <div>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="EmployeeCostPerYear" class="control-label"></label>
+                <input asp-for="EmployeeCostPerYear" class="form-control" />
+                <span asp-validation-for="EmployeeCostPerYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DependentCostPerYear" class="control-label"></label>
+                <input asp-for="DependentCostPerYear" class="form-control" />
+                <span asp-validation-for="DependentCostPerYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LetterToDiscount" class="control-label"></label>
+                <input asp-for="LetterToDiscount" class="form-control" />
+                <span asp-validation-for="LetterToDiscount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiscountAmount" class="control-label"></label>
+                <input asp-for="DiscountAmount" class="form-control" />
+                <span asp-validation-for="DiscountAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChecksPerYear" class="control-label"></label>
+                <input asp-for="ChecksPerYear" class="form-control" />
+                <span asp-validation-for="ChecksPerYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

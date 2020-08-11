@@ -1,0 +1,37 @@
+﻿@model BenefitPolicyViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <div class="form-group">
+        <h3 class="text-center">Current Benefit Information</h3>
+        <div class="text-left">
+            <p class="font-weight-bold">Employee Cost Per Year:</p>
+            <p>@Html.DisplayFor(model => model.EmployeeCostPerYear)</p>
+        </div>
+        <div class="text-left">
+            <p class="font-weight-bold">Dependent Cost Per Year:</p>
+            <p>@Html.DisplayFor(model => model.DependentCostPerYear)</p>
+        </div>
+        <div class="text-left">
+            <p class="font-weight-bold">First Letter that receives Discount:</p>
+            <p>@Html.DisplayFor(model => model.LetterToDiscount)</p>
+        </div>
+        <div class="text-left">
+            <p class="font-weight-bold">Current Discount Amount:</p>
+            <p>@Html.DisplayFor(model => model.DiscountAmount)</p>
+        </div>
+        <div class="text-left">
+            <p class="font-weight-bold">Is the policy active?:</p>
+            <p>@Html.DisplayFor(model => model.IsActive)</p>
+        </div>
+        <div class="text-left">
+            <p class="font-weight-bold">Current Paychecks Per Year:</p>
+            <p>@Html.DisplayFor(model => model.ChecksPerYear)</p>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
+        </div>
+    </div>
+</div>

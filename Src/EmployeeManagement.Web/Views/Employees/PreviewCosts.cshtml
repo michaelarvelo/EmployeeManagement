@@ -1,0 +1,53 @@
+﻿@model EmployeeCost
+
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<div>
+    <hr />
+    <div class="form-group">
+        <h3 class="text-center">Employee Cost Preview</h3>
+        <div class="text-left">
+            <div class="text-left">
+                <p class="font-weight-bold">Total Costs Per Paycheck:</p>
+                <p>@Html.DisplayFor(model => model.TotalCostPerPaycheck)</p>
+            </div>
+            <div class="text-left">
+                <p class="font-weight-bold">Total Costs Per Year</p>
+                <p>@Html.DisplayFor(model => model.TotalCostPerYear)</p>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        @*<th>#</th>*@
+                        <th>Full Name</th>
+                        <th>Per Paycheck Cost</th>
+                        <th>Per Year Cost</th>
+                        <th>Discount Applied?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="font-weight-bold">
+                        <td>@Model.Employee.FullName</td>
+                        <td>@Model.CostPerCheck</td>
+                        <td>@Model.CostPerYear</td>
+                        <td>@Model.IsDiscountApplied</td>
+                    </tr>
+                    @foreach (DependentCost dependent in Model.DependentCosts)
+                    {
+                        <tr>
+                            <td>@dependent.Dependent.FullName</td>
+                            <td>@dependent.CostPerCheck</td>
+                            <td>@dependent.CostPerYear</td>
+                            <td>@dependent.IsDiscountApplied</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

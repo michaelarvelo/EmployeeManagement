@@ -1,0 +1,74 @@
+﻿@model DependentViewModel
+
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h3>Here we can add dependents</h3>
+
+@Html.ValidationSummary(true)
+
+<div class="row">
+    <div class="card card-body bg-light">
+        <form asp-action="AddDependents">
+            <input asp-for="EmployeeID" type="hidden" value="@Model.EmployeeID" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<input asp-for="FirstName"*@
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Relationship" class="control-label"></label>
+                <select asp-for="Relationship" asp-items="Html.GetEnumSelectList<Relationship>()">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Dependent" class="btn btn-primary" />
+                <div class="text-success">@ViewBag.UserMessage</div>
+            </div>
+        </form>
+        <div class="text-right">
+            <a asp-action="PreviewCosts" asp-route-id="@Model.EmployeeID">Preview Costs</a>
+        </div>
+    </div>
+    @if (Model.CurrentDependents.Count > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Relationship)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dependent in Model.CurrentDependents)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => dependent.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => dependent.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => dependent.Relationship)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
