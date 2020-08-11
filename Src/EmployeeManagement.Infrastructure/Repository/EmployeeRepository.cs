@@ -2,10 +2,10 @@
 using EmployeeManagement.Core.Model;
 using EmployeeManagement.Core.Repositories;
 using EmployeeManagement.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement.Infrastructure.Repository
 {
@@ -13,7 +13,6 @@ namespace EmployeeManagement.Infrastructure.Repository
     {
         private readonly ManagementContext context;
         private readonly ILogger<EmployeeRepository> logger;
-        private readonly CostService costService;
 
         public EmployeeRepository(ManagementContext context, ILogger<EmployeeRepository> logger)
         {

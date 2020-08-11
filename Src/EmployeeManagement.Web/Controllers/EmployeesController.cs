@@ -1,18 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using EmployeeManagement.Core;
+using EmployeeManagement.Core.Model;
+using EmployeeManagement.Core.Repositories;
+using EmployeeManagement.Web.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using EmployeeManagement.Core;
-using EmployeeManagement.Infrastructure.Data;
-using EmployeeManagement.Infrastructure.Repository;
-using EmployeeManagement.Core.Repositories;
-using AutoMapper;
-using EmployeeManagement.Web.ViewModels;
-using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.ProjectModel;
-using EmployeeManagement.Core.Model;
 
 namespace EmployeeManagement.Web.Controllers
 {

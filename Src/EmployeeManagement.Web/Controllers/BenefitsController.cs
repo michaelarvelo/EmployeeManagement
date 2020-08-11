@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
 using EmployeeManagement.Core.Model;
-using EmployeeManagement.Infrastructure.Data;
 using EmployeeManagement.Core.Repositories;
-using AutoMapper;
 using EmployeeManagement.Web.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement.Web.Controllers
 {

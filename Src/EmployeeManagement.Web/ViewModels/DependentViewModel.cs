@@ -1,11 +1,5 @@
-﻿using EmployeeManagement.Core;
-using EmployeeManagement.Core.Enums;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
-using System;
+﻿using EmployeeManagement.Core.Enums;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EmployeeManagement.Web.ViewModels
 {

@@ -2,10 +2,6 @@
 using EmployeeManagement.Core;
 using EmployeeManagement.Core.Model;
 using EmployeeManagement.Web.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EmployeeManagement.Web.AutoMapper
 {

@@ -20,34 +20,44 @@
             <p class="font-weight-bold">Salary Information:</p>
             <p>@Html.DisplayFor(model => model.Salary)</p>
         </div>
-        <div class="text-left">
-            <p class="font-weight-bold">Dependent Information:</p>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        @*<th>#</th>*@
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Relationship</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (DependentViewModel dependent in Model.Dependents)
-                    {
+        @if (Model.Dependents.Count > 0)
+        {
+            <div class="text-left">
+                <p class="font-weight-bold">Dependent Information:</p>
+                <table class="table">
+                    <thead class="thead-dark">
                         <tr>
-                            @*<th scope="row">@dependent.ID</th>*@
-                            <td>@dependent.FirstName</td>
-                            <td>@dependent.LastName</td>
-                            <td>@dependent.Relationship</td>
+                            @*<th>#</th>*@
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Relationship</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        @foreach (DependentViewModel dependent in Model.Dependents)
+                        {
+                            <tr>
+                                @*<th scope="row">@dependent.ID</th>*@
+                                <td>@dependent.FirstName</td>
+                                <td>@dependent.LastName</td>
+                                <td>@dependent.Relationship</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
     </div>
 </div>
 <div>
-    <a asp-action="PreviewCosts" asp-route-id="@Model.ID">Check Costs</a>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
-    <a asp-action="Index">Back to List</a>
+    @*<form asp-action="PreviewCosts" asp-route-id="@Model.ID">
+            <input type="submit" value="Check Costs" class="btn btn-success" /> |
+        </form>
+
+        <form asp-action="Edit" asp-route-id="@Model.ID">
+            <input type="submit" value="Check Costs" class="btn btn-primary" /> |
+        </form>*@
+    <a asp-action="PreviewCosts" class="font-weight-bold" asp-route-id="@Model.ID">Check Costs</a> |
+    <a asp-action="Edit" class="font-weight-bold" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index" class="font-weight-bold">Back to List</a>
 </div>

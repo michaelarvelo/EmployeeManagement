@@ -1,5 +1,4 @@
-﻿using EmployeeManagement.Core.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace EmployeeManagement.Web.ViewModels

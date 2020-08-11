@@ -1,7 +1,6 @@
 ﻿using EmployeeManagement.Core;
 using EmployeeManagement.Core.Interfaces;
 using EmployeeManagement.Core.Model;
-using EmployeeManagement.Core.Repositories;
 using EmployeeManagement.Infrastructure.Factories;
 
 namespace EmployeeManagement.Infrastructure
